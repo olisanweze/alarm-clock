@@ -86,7 +86,7 @@ input[type="button"] {
     width: 140px;
     height: 44px;
     border-radius: 50px;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     font-weight: 600;
     color: #fff;
@@ -101,3 +101,22 @@ input[type="button"]:hover {
     border: 1px solid var(--app-purple-hover);
 }
 
+/*===============================*/
+/* media query                   */
+/*===============================*/
+
+/* 768px and down */
+
+@media (max-width: 768px) {
+    .clock-time {
+        font-size: 12rem;
+    }
+}
+
+/* 480px and down */
+
+@media (max-width: 480px) {
+    .clock-time {
+        font-size: 10rem;
+    }
+}   
