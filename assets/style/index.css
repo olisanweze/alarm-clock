@@ -10,10 +10,19 @@ body {
     background: var(--app-background-color);
 }
 
+body::after {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    min-height: 100%;
+    content: '';
+    background-color: rgb(20 19 25 / 70%);
+    z-index: -1111;
+}
+
 h1, p, .clock-time {
     font-family: 'Open Sans', sans-serif;
 }
-  
   
 /* =============================== */
 /*          alarm clock            */
@@ -35,9 +44,13 @@ h1, p, .clock-time {
 .clock-time {
     font-size: 14rem;
     color: #fff;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     line-height: 1;
     transition: all 0.25s ease-in-out;
+}
+
+.clock-time.purple {
+    color: #845cd6;
 }
   
 .alarm {

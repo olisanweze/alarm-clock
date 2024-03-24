@@ -1,5 +1,21 @@
 'use strict';
 
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  utility functions                                    */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+function listen(event, selector, callback) {
+    return selector.addEventListener(event, callback);
+}
+  
+function select(selector) {
+    return document.querySelector(selector);
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  component                                            */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
 const time = select('.clock-time');
 const hour = select('.hour');
 const minutes = select('.minutes');
@@ -46,8 +62,10 @@ function timeCompare(one, two) {
     let timeTwo = `${two.getHours()}${two.getMinutes()}${two.getSeconds()}`;
 
     if (timeOne === timeTwo) {
+        time.classList.add('purple');
         audio.play();
         ready = false;
+        setTimeout(() => { time.classList.remove('purple'); }, 6800);
     }
 }
 
@@ -102,16 +120,3 @@ listen('click', set, () => {
 });
 
 alarmTimeDisplay();
-
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-/*  utility functions                                    */
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-function listen(event, selector, callback) {
-    return selector.addEventListener(event, callback);
-}
-  
-function select(selector) {
-    return document.querySelector(selector);
-}
