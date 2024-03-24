@@ -118,18 +118,10 @@ input[type="button"]:hover {
 /* media query                   */
 /*===============================*/
 
-/* 768px and down */
-
-@media (max-width: 768px) {
-    .clock-time {
-        font-size: 12rem;
-    }
-}
-
 /* 480px and down */
 
 @media (max-width: 480px) {
     .clock-time {
-        font-size: 10rem;
+        font-size: 12rem;
     }
 }   
